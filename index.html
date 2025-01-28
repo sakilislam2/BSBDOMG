@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Serif+Bengali:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <title>Coming Soon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif; /* Default font for English */
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            flex-direction: column;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 1.2rem;
+            font-weight: lighter;
+            
+        }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .countdown div {
+            background: white;
+            color: black;
+            padding: 15px;
+            border-radius: 8px;
+            width: 80px;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 2px solid white;
+            color: white;
+            background: transparent;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif; /* Default font for English */
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>COMING SOON!</h1>
+    <h2>Our site is under construction & wil be live in:</h2>
+
+    <div class="countdown">
+        <div><span id="days">00</span><br>Days</div>
+        <div><span id="hours">00</span><br>Hours</div>
+        <div><span id="minutes">00</span><br>Minutes</div>
+        <div><span id="seconds">00</span><br>Seconds</div>
+    </div>
+    <button class="button">Thanks for your patience!</button>
+    <div class="footer">© 2025 | BSBDOfficialMultiplayerGroup</div>
+    <script>
+        const targetDate = new Date();
+        targetDate.setDate(targetDate.getDate() + 30);
+        targetDate.setHours(0, 0, 0, 0);
+        
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now;
+            
+            if (diff <= 0) {
+                document.getElementById('days').textContent = "00";
+                document.getElementById('hours').textContent = "00";
+                document.getElementById('minutes').textContent = "00";
+                document.getElementById('seconds').textContent = "00";
+                return;
+            }
+            
+            const days = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            const hours = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
+            const minutes = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
+            const seconds = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
+            
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
