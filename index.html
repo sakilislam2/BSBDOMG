@@ -21,8 +21,10 @@
             color: white;
             text-align: center;
             flex-direction: column;
-            padding: 20px;
+            padding: 20px;      
+            overflow: hidden;      
         }
+        
         .container {
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
@@ -33,11 +35,13 @@
         h1 {
             font-size: 2.5rem;
             font-weight: bold;
+            text-shadow: 0px 0px 0px black;
         }
         h2 {
             font-size: 1.2rem;
             font-weight: lighter;
-            
+            text-shadow: 0px 0px 0px black;
+            animation-name: blink;
         }
         .countdown {
             display: flex;
@@ -46,6 +50,7 @@
             font-size: 1.2rem;
             font-weight: bold;
             flex-wrap: wrap;
+            
         }
         .countdown div {
             background: white;
@@ -60,10 +65,11 @@
             align-items: center;
             font-size: 1.2rem;
             line-height: 1;
+            box-shadow: 0px 0px 0px black;
         }
         .countdown div span {
             font-size: 30px;
-            
+
             align-items: baseline;
         }
         .button {
@@ -76,10 +82,12 @@
             cursor: pointer;
             border-radius: 8px;
             font-family: 'Poppins', sans-serif; /* Default font for English */
+            text-shadow: 0px 0px 0px black;
         }
         .footer {
             margin-top: 20px;
             font-size: 0.8rem;
+            text-shadow: 0px 0px 0px black;
         }
         @media (max-width:600px){
             h1 {
@@ -97,46 +105,42 @@
     </style>
 </head>
 <body>
-    <h1>COMING SOON!</h1>
+    <h1>COMING SOON...</h1>
     <h2>Our site is under construction & wil be live in:</h2>
     <div class="countdown">
         <div><span id="days">00</span><br>Days</div>
         <div><span id="hours">00</span><br>Hours</div>
         <div><span id="minutes">00</span><br>Minutes</div>
         <div><span id="seconds">00</span><br>Seconds</div>
-    </div>
+    </div> 
     <button class="button">Thanks for your patience!</button>
     <div class="footer">© 2025 | BSBDOfficialMultiplayerGroup</div>
-    <script>
-        const targetDate = new Date();
-        targetDate.setDate(targetDate.getDate() + 30);
-        targetDate.setHours(0, 0, 0, 0);
-        
-        function updateCountdown() {
-            const now = new Date();
-            const diff = targetDate - now;
-            
-            if (diff <= 0) {
-                document.getElementById('days').textContent = "00";
-                document.getElementById('hours').textContent = "00";
-                document.getElementById('minutes').textContent = "00";
-                document.getElementById('seconds').textContent = "00";
-                return;
-            }
-            
-            const days = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
-            const hours = String(Math.floor((diff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
-            const minutes = String(Math.floor((diff / (1000 * 60)) % 60)).padStart(2, '0');
-            const seconds = String(Math.floor((diff / 1000) % 60)).padStart(2, '0');
-            
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
+    
+<script>
+    var countDownDate = new Date("Feb 21, 2025  00:00:00").getTime();
+    var x = setInterval(function(){
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("days").innerHTML = 00;
+            document.getElementById("hours").innerHTML = 00;
+            document.getElementById("minutes").innerHTML = 00;
+            document.getElementById("seconds").innerHTML = 00;
         }
-        
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-    </script>
+    },1000)
+</script>
+
 </body>
 </html>
