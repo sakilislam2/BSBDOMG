@@ -8,7 +8,7 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     
-    <title>BSBD OFFICIAL MULTIPLAYER GROUP JOINING REQUEST</title>
+    <title>Coming Soon</title>
     <style>
         body {
             display: flex;
@@ -24,6 +24,55 @@
             padding: 20px;      
             overflow: hidden;      
         }
+
+
+        /*Side bar*/
+
+        .sidebar {
+            position: fixed;
+            left: -250px;
+            top: 0;
+            width: 200px;
+            height: 100%;
+            background: #222;
+            transition: 0.3s;
+            padding-top: 60px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        }
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background: #575757;
+        }
+        .sidebar-icon {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            font-size: 24px;
+            background: transparent;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            backdrop-filter: blur(5px);
+        }
+        .sidebar.active {
+            left: 0;
+        }
+        @media (max-width: 600px) {
+            .sidebar {
+                width: 200px;
+            }
+        }
+    
+        /*Main part*/
         
         .container {
             background: rgba(255, 255, 255, 0.1);
@@ -105,6 +154,34 @@
     </style>
 </head>
 <body>
+
+    <!--Side bar-->
+
+    <div class="sidebar-icon" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="sidebar" id="sidebar">
+        <a href="#"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
+        <a href="social.html"><i class="fas fa-users"></i> Social</a>
+        <a href="skins.html"><i class="fas fa-images"></i> Skins</a>
+        <a href="tournament.html"><i class="fas fa-trophy"></i> Tournament</a>
+        <a href="search.html"><i class="fas fa-search"></i> Search</a>
+        <a href="logs.html"><i class="fas fa-file-alt"></i> Logs</a>
+        
+    </div>
+    
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("active");
+        }
+    </script>
+
+    <!--Main Section-->
+
     <h1>COMING SOON...</h1>
     <h2>Our site is under construction & wil be live in:</h2>
     <div class="countdown">
