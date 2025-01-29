@@ -54,7 +54,7 @@
         .sidebar a:hover {
             background: #575757;
         }
-        .sidebar-icon {
+        .sidebar-icon, .sidebar-close {
             position: fixed;
             left: 10px;
             top: 10px;
@@ -65,9 +65,18 @@
             cursor: pointer;
             border-radius: 5px;
             backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+        .sidebar-close {
+            display: none;
+            left: 220px;
+            top: 15px;
         }
         .sidebar.active {
             left: 0;
+        }
+        .sidebar.active .sidebar-close {
+            display: block;
         }
         @media (max-width: 600px) {
             .sidebar {
@@ -166,6 +175,9 @@
     
     <div class="sidebar" id="sidebar">
         <a href="#"><i class="fas fa-home"></i> Home</a>
+        <div class="sidebar-close" onclick="toggleSidebar()">
+            <i class="fas fa-arrow-left"></i>
+        </div>
         <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
         <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
         <a href="social.html"><i class="fas fa-users"></i> Social</a>
