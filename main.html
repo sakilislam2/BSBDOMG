@@ -29,7 +29,6 @@
         }
 
         /*Side bar*/
-
         .sidebar {
             position: fixed;
             left: -250px;
@@ -40,6 +39,7 @@
             transition: 0.3s;
             padding-top: 60px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 1500;
         }
         .sidebar a {
             display: flex;
@@ -84,7 +84,6 @@
         }
     
         /*Main part*/
-
         h1 {
             font-size: 2.8rem;
             font-weight: bold;
@@ -95,7 +94,6 @@
             text-align: center;
             width: 70%;
         }
-
         .button-container {
             display: flex;
             gap: 20px;
@@ -140,7 +138,7 @@
                 padding: 6px 12px;
             }
         }
-
+        /*Floating section*/
         .floating-section {
             margin-top: 60px;
             background: rgba(0, 0, 0, 0.7);
@@ -225,21 +223,19 @@
     </style>
 </head>
 <body>
-
     <!--Side bar-->
 
     <div class="sidebar-icon" onclick="toggleSidebar()">
         <i class="fas fa-bars"></i>
     </div>
-    
     <div class="sidebar" id="sidebar">
-        <div class="sidebar-close" onclick="toggleSidebar()">
-            <i class="fas fa-arrow-left"></i>
-        </div>
+            <div class="sidebar-close" onclick="toggleSidebar()">
+                <i class="fas fa-arrow-left"></i>
+            </div>
         <a href="main.html"><i class="fas fa-home"></i> Home</a>
         <a href="sidebar/about.html"><i class="fas fa-info-circle"></i> About Us</a>
         <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
-        <a href="social.html"><i class="fas fa-users"></i> Social</a>
+        <a href="help.html"><i class="fas fa-users"></i> Need Help?</a>
         <a href="skins.html"><i class="fas fa-images"></i> Skins</a>
         <a href="sidebar/tournament.html"><i class="fas fa-trophy"></i> Tournament</a>
         <a href="sidebar/trip.html" target="_blank"><i class="fas fa-clock"></i> Trip Time & Rules</a>
@@ -251,7 +247,6 @@
     <h2>This is the official website of Bus Simulator Bangladesh Official Multiplayer Group.
         This site is run by BSBDOMG Admin Panel. This site helps players to enjoy the game by serving all resouces at one place.
     </h2>
- 
     <div class="button-container">
         <a class="button" href="https://forms.gle/K87fHr2StxKTN9P86" target="_blank">Join Us</a>
         <a class="button" href="sidebar/leaderboard.html" target="_blank">See Top Players!</a>
@@ -259,7 +254,7 @@
 
     <!--BSBD links area-->
     <div class="floating-section">
-        <h3>BSBD Links</h3>
+            <h3>BSBD Links</h3>
         <div class="social-links">
             <a href="https://play.google.com/store/apps/details?id=com.GhostInteractive.BusSimulatorBangladesh&hl=en-US" target="_blank">
                 <i class="fab fa-google-play"></i>
@@ -289,11 +284,14 @@
             const sidebar = document.getElementById("sidebar");
             sidebar.classList.toggle("active");
         }
+
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
     </script>
 
-<footer>
-    <p>&copy; 2025 BSBDOMG | All rights reserved.</p>
-</footer>
+        <footer>
+            <p>&copy; 2025 BSBDOMG | All rights reserved.</p>
+        </footer>
 
 </body>
 </html>
