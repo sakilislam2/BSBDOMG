@@ -8,7 +8,7 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     
-    <title>Coming Soon</title>
+    <title>BSBDOMG</title>
     <style>
         body {
             background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(images/bgimg.jpg);
@@ -141,6 +141,79 @@
             }
         }
 
+        .floating-section {
+            margin-top: 60px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            color: white;
+            text-align: center;
+            z-index: 1000;
+        }
+        .floating-section h3 {
+            margin: 0 0 20px;
+            font-size: 1.2rem;
+            border-bottom: 2px solid #4CAF50;
+            display: inline-block;
+            padding-bottom: 5px;
+            color: #fff;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        .social-links a:hover {
+            color: #ffcc00;
+        }
+        .social-links i {
+            font-size: 1.5rem;
+        }
+        .social-links span {
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .floating-section h3 {
+                font-size: 1rem;
+            }
+            .social-links a {
+                font-size: 0.9rem;
+            }
+            .social-links i {
+                font-size: 1.2rem;
+            }
+            .social-links span {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .floating-section h3 {
+                font-size: 0.9rem;
+            }
+            .social-links a {
+                font-size: 0.8rem;
+            }
+            .social-links i {
+                font-size: 1rem;
+            }
+            .social-links span {
+                font-size: 0.7rem;
+            }
+        }
+
         footer {
             text-align: center; 
             font-family: Poppins; 
@@ -164,7 +237,7 @@
             <i class="fas fa-arrow-left"></i>
         </div>
         <a href="main.html"><i class="fas fa-home"></i> Home</a>
-        <a href="about.html"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="sidebar/about.html"><i class="fas fa-info-circle"></i> About Us</a>
         <a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a>
         <a href="social.html"><i class="fas fa-users"></i> Social</a>
         <a href="skins.html"><i class="fas fa-images"></i> Skins</a>
@@ -178,13 +251,39 @@
     <h2>This is the official website of Bus Simulator Bangladesh Official Multiplayer Group.
         This site is run by BSBDOMG Admin Panel. This site helps players to enjoy the game by serving all resouces at one place.
     </h2>
-
-    
+ 
     <div class="button-container">
         <a class="button" href="https://forms.gle/K87fHr2StxKTN9P86" target="_blank">Join Us</a>
         <a class="button" href="sidebar/leaderboard.html" target="_blank">See Top Players!</a>
     </div>
-    
+
+    <!--BSBD links area-->
+    <div class="floating-section">
+        <h3>BSBD Links</h3>
+        <div class="social-links">
+            <a href="https://play.google.com/store/apps/details?id=com.GhostInteractive.BusSimulatorBangladesh&hl=en-US" target="_blank">
+                <i class="fab fa-google-play"></i>
+                <span>Play Store</span>
+            </a>
+            <a href="https://www.facebook.com/bussimulatorbangladesh.bd" target="_blank">
+                <i class="fab fa-facebook"></i>
+                <span>FB Page</span>
+            </a>
+            <a href="https://www.facebook.com/groups/bsbdgame" target="_blank">
+                <i class="fab fa-facebook"></i>
+                <span>FB Group</span>
+            </a>
+            <a href="https://discord.gg/yQSMsnB3U3" target="_blank">
+                <i class="fab fa-discord"></i>
+                <span>Discord</span>
+            </a>
+            <a href="https://www.youtube.com/@bussimulatorbangladesh-bsbd" target="_blank">
+                <i class="fab fa-youtube"></i>
+                <span>YouTube</span>
+            </a>
+        </div>
+    </div>
+
     <script>
         function toggleSidebar() {
             const sidebar = document.getElementById("sidebar");
