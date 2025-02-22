@@ -292,52 +292,9 @@
 
         <footer>
             <p>&copy; 2025 BSBDOMG | All rights reserved.</p>
-            <p>Visitors: <span id="visitor-count">Loading...</span></p>
+            
         </footer>
 
-
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js"></script>
-
-<script>
-    // Firebase Configuration
-        const firebaseConfig = {
-      apiKey: "AIzaSyBjm9qLFpyU8bZ97ge-8HEoSY7_jVBC9E8",
-      authDomain: "bsbdomgcounter.firebaseapp.com",
-      projectId: "bsbdomgcounter",
-      storageBucket: "bsbdomgcounter.firebasestorage.app",
-      messagingSenderId: "658216320944",
-      appId: "1:658216320944:web:8abfda34fecc492c6f2075",
-      measurementId: "G-JMYBNQK65J"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-
-    const storageKey = "visited";
-    const visitorRef = db.collection("visitorCounts").doc("pageVisitors");
-
-    // Check if user already visited
-    if (!localStorage.getItem(storageKey)) {
-        visitorRef.update({ count: firebase.firestore.FieldValue.increment(1) })
-            .then(() => {
-                localStorage.setItem(storageKey, "true"); // Mark user as counted
-            });
-    }
-
-    // Fetch and display visitor count
-    visitorRef.get().then((doc) => {
-        if (doc.exists) {
-            document.getElementById("visitor-count").innerText = doc.data().count;
-        }
-    });
-</script>
 
 
     
