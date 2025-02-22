@@ -240,7 +240,7 @@
         <a href="sidebar/tournament.html" target="_blank"><i class="fas fa-trophy"></i> Tournament</a>
         <a href="sidebar/trip.html" target="_blank"><i class="fas fa-clock"></i> Trip Time & Rules</a>
         <a href="sidebar/logs.html" target="_blank"><i class="fas fa-file-alt"></i> Logs</a>   
-          <p>Visitors: <span id="visitor-count">Loading...</span></p>
+          
     </div>
 
     <!--Main Section-->
@@ -292,6 +292,7 @@
 
         <footer>
             <p>&copy; 2025 BSBDOMG | All rights reserved.</p>
+            <p>Visitors: <span id="visitor-count">Loading...</span></p>
         </footer>
 
 
@@ -311,6 +312,10 @@
       measurementId: "G-JMYBNQK65J"
     };
 
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
