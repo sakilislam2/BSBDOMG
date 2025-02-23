@@ -294,10 +294,69 @@
     
         <footer>
             <p>&copy; 2025 BSBDOMG | All rights reserved.</p>
-            
+            <p>Unique Visitors: <span id="visitorCounter">Loading...</span></p>
         </footer>
 
-
+    <script type="module">
+            // Import Firebase SDK
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+            import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+          
+            // Firebase configuration (replace with your own config)
+            const firebaseConfig = {
+                apiKey: "AIzaSyD3ofWM-I6kSdFWmSHIAI2kYozSDqeoK2E",
+                authDomain: "visitor-count-37119.firebaseapp.com",
+                projectId: "visitor-count-37119",
+                storageBucket: "visitor-count-37119.firebasestorage.app",
+                messagingSenderId: "321408767043",
+                appId: "1:321408767043:web:ab37085770456b20bab0f6"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+          
+            // Function to count unique visitors
+            async function trackUniqueVisitor() {
+              const visitorId = localStorage.getItem("uniqueVisitorID");
+          
+              if (!visitorId) {
+                const newVisitorId = crypto.randomUUID(); // Generate a unique ID
+                localStorage.setItem("uniqueVisitorID", newVisitorId);
+          
+                const countRef = doc(db, "visitorCount", "counter");
+          
+                try {
+                  const docSnap = await getDoc(countRef);
+          
+                  if (docSnap.exists()) {
+                    const currentCount = docSnap.data().count || 0;
+                    await setDoc(countRef, { count: currentCount + 1 });
+                  } else {
+                    await setDoc(countRef, { count: 1 });
+                  }
+                } catch (error) {
+                  console.error("Error updating visitor count:", error);
+                }
+              }
+            }
+          
+            // Function to display visitor count
+            async function displayVisitorCount() {
+              const countRef = doc(db, "visitorCount", "counter");
+              const docSnap = await getDoc(countRef);
+          
+              if (docSnap.exists()) {
+                document.getElementById("visitorCounter").innerText = docSnap.data().count;
+              } else {
+                document.getElementById("visitorCounter").innerText = "0";
+              }
+            }
+          
+            // Run the functions
+            trackUniqueVisitor();
+            displayVisitorCount();
+          </script>
 
     
 </body>
