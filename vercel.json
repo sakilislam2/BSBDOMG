@@ -1,7 +1,7 @@
 {
   "rewrites": [
     { "source": "/s/about", "destination": "/s/about.html" },
-    { "source": "/sidebar/page2", "destination": "/sidebar/page2.html" },
+    { "source": "/s/leaderboard", "destination": "/s/leaderboard.html" },
     { "source": "/sidebar/page3", "destination": "/sidebar/page3.html" },
     { "source": "/sidebar/page4", "destination": "/sidebar/page4.html" },
     { "source": "/sidebar/page5", "destination": "/sidebar/page5.html" }
