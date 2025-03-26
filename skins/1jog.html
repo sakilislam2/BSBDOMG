@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Noto+Serif+Bengali:wght@100..900&display=swap" rel="stylesheet">
+    <title>Skins - Kiwi 1JOG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Poppins, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        .bskin-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px; /* Limit the container width */
+        }
+        .bskin-card {
+            background: #fff;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .bskin-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .bskin-info {
+            padding: 15px;
+        }
+        .bskin-info h2 {
+            font-size: 20px;
+            margin-bottom: 0px;
+        }
+        .bskin-info p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 0px;
+        }
+        .price {
+            font-size: 18px;
+            color: #27ae60;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .free {
+            color: #e74c3c;
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+        .captcha-container {
+            display: inline-block;
+        }
+        .captcha-code {
+            font-weight: bold;
+            font-size: 16px;
+            color: #ff0000;
+            margin-bottom: -8px;
+        }
+        input {
+            padding: 8px;
+            margin: 8px 0;
+            font-family: Poppins;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 60%;
+            max-width: 200px;
+        }
+        button {
+            padding: 8px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .download-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 5px;
+        }
+        .download-links a {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        .download-links a.enabled {
+            pointer-events: auto;
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .bskin-container {
+                gap: 15px; /* Adjust gap for smaller screens */
+            }
+            .bskin-card {
+                width: 100%;
+                max-width: 90%; /* Ensure cards fit within the screen */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .bskin-info h2 {
+                font-size: 18px;
+            }
+            .bskin-info p {
+                font-size: 12px;
+            }
+            .price {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bskin-container">
+      <!--  <div class="bskin-card">
+            <img src="busimg/1jog.png" alt="Premium Skin Image">
+            <div class="bskin-info">
+                <h2>Premium Skin</h2>
+                <p>Short description About the bus.</p>
+                <div class="price">৳40</div>
+            </div>
+        </div> -->
+        <div class="bskin-card">
+            <img src="simg/1jog/Himalay.jpg" alt="Himalay Express Image">
+            <div class="bskin-info">
+                <h2>Himalay Express</h2>
+                <p>Route: Dhaka - Laksham</p>
+                <div class="price free">FREE</div>
+                <div class="captcha-container">
+                    <span class="captcha-code">OG1</span> <br>
+                    <input type="text" class="captchaInput" placeholder="Enter code">
+                    <button onclick="verifyCaptcha(this)">Verify</button>
+                </div>
+                <div class="download-links">
+                    <a href="https://drive.google.com/uc?export=download&id=1W0VYTIgmhIYdD8OnlZiN6YDU93FpP2wp&confirm=t" class="download-btn" download>Paint</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1W-lW5wSsD2f2hplo6fp1ULfigrga1WkJ&confirm=t" class="download-btn" download>Glass</a>
+                </div>
+            </div>  
+         </div>
+         <div class="bskin-card">
+            <img src="simg/1jog/Himachal.jpg" alt="Himachal Image">
+            <div class="bskin-info">
+                <h2>Himachal</h2>
+                <p>Route: All</p>
+                <div class="price free">FREE</div>
+                <div class="captcha-container">
+                    <span class="captcha-code">OG2</span> <br>
+                    <input type="text" class="captchaInput" placeholder="Enter code">
+                    <button onclick="verifyCaptcha(this)">Verify</button>
+                </div>
+                <div class="download-links">
+                    <a href="https://drive.google.com/uc?export=download&id=1JUoH6uHrJHAvBaXLRNZWtgqyMrCP-iKU&confirm=t" class="download-btn" download>Paint</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1JQJS0B1xh1loB8wHixlsvJ-nhXxR-1Fm&confirm=t" class="download-btn" download>Glass</a>
+                </div>
+            </div>  
+         </div>
+         <div class="bskin-card">
+            <img src="simg/1jog/Hazart Shahjalal (R.) Exp.jpg" alt="Hazart Shahjalal (RA) Express Image">
+            <div class="bskin-info">
+                <h2>Hazart Shahjalal (R.) Exp.</h2>
+                <p>Route: Dhaka - Netrokona</p>
+                <div class="price free">FREE</div>
+                <div class="captcha-container">
+                    <span class="captcha-code">OG4</span> <br>
+                    <input type="text" class="captchaInput" placeholder="Enter code">
+                    <button onclick="verifyCaptcha(this)">Verify</button>
+                </div>
+                <div class="download-links">
+                    <a href="https://drive.google.com/uc?export=download&id=1Q4SVSFnMO0oOr-FP2BYXb8aSDy7Hs4kY&confirm=t" class="download-btn" download>Paint</a>
+                    <a href="https://drive.google.com/uc?export=download&id=1Pz29XrpbqrAzxaElciHJKPr0RrzSQzaW&confirm=t" class="download-btn" download>Glass</a>
+                </div>
+            </div>  
+         </div>
+         <div class="bskin-card">
+            <img src="simg/1jog/Shadhin Express.jpg" alt="Shadhin Express Image">
+            <div class="bskin-info">
+                <h2>Shadhin Express</h2>
+                <p>Route: Mirpur12 - Gulistan - Mawa</p>
+                <div class="price free">FREE</div>
+                <div class="captcha-container">
+                    <span class="captcha-code">OG4</span> <br>
+                    <input type="text" class="captchaInput" placeholder="Enter code">
+                    <button onclick="verifyCaptcha(this)">Verify</button>
+                </div>
+                <div class="download-links">
+                    <a href="https://drive.google.com/uc?export=download&id=16_9CawEUsZ4ooRVQKpAfSAPaJWGM4vSm&confirm=t" class="download-btn" download>Paint</a>
+                    <a href="https://drive.google.com/uc?export=download&id=16YxYfIS4VN9vJq7R5TrWbhrGoDtWBk0Y&confirm=t" class="download-btn" download>Glass</a>
+                </div>
+            </div>  
+         </div>
+
+    </div>
+    <script>
+        function verifyCaptcha(button) {
+            const card = button.closest(".bskin-card"); // Get the current bskin card
+            const input = card.querySelector(".captchaInput").value; // Get the entered captcha
+            const captchaText = card.querySelector(".captcha-code").innerText; // Get the actual captcha
+            const downloadBtns = card.querySelectorAll(".download-btn"); // Get the paint download button
+            
+            if (input === captchaText) {
+                downloadBtns.forEach(btn=> btn.classList.add("enabled")); // Enable all download buttons
+            } else {
+                alert("Incorrect CAPTCHA! Try again.");
+            }
+        }
+    </script>
+    
+</body>
+</html>
